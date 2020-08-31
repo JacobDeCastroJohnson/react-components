@@ -14,7 +14,7 @@ var GroceryList = () => (
 
 //Create React components for the 2 items in your grocery list. Create a Fruit component and a Spices component
 var Fruit = () => (
-  <li>Fruit</li>
+  <li onClick={onListItemClick}>Fruit</li>
 );
 
 var Spices = () => (
@@ -27,6 +27,11 @@ var Spices = () => (
 var GroceryListItem = (props) => (
   <li>{props.groceryItems[2]}</li>
 );
+
+//Create event handling component
+var onListItemClick = (event) => {
+  console.log('I got clicked');
+};
 
 
 

@@ -24,9 +24,23 @@ var Spices = () => (
 
 // Create a reusable GroceryListItem component that dynamically renders a given grocery item
 //Refactor GroceryList to dynamically render an array of groceryITems, utilizing your new GrocerList item component
-var GroceryListItem = (props) => (
-  <li>{props.groceryItems[2]}</li>
-);
+// var GroceryListItem = (props) => (
+//   <li>{props.groceryItems[2]}</li>
+// );
+
+// Refactor GroceryListItem to be a class component
+class GroceryListItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <li>{this.props.groceryItems}</li>
+    );
+  }
+}
+
 
 //Create event handling component
 var onListItemClick = (event) => {

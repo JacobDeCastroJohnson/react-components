@@ -1,14 +1,13 @@
 // TODO
 
 //Create a GroceryList component that contains an unordered list of 2 grocery items
-var GroceryList = () => (
-  <div>
+var GroceryList = (props) => (
+
     <ul>
-      <Fruit />
-      <Spices />
-      <GroceryListItem groceryItems={['Nuts', 'Bread', 'Flour']}/>
+      {props.GroceryList.map(groceryItems =>
+        <GroceryListItem groceryItems={groceryItems}/>
+      )}
     </ul>
-  </div>
 );
 //Note: had a helpdesk ticket because I used {} instead of (). Note bracket usage on arrow functions means I need to use a return statement, whereas with () the return is auto generated.
 
@@ -36,7 +35,7 @@ class GroceryListItem extends React.Component {
 
   render() {
     return (
-      <li>{this.props.groceryItems}</li>
+      <ul>{this.props.groceryItems}</ul>
     );
   }
 }
@@ -51,4 +50,4 @@ var onListItemClick = (event) => {
 
 
 //Render this component to the div tag inside index.html with an id of app
-ReactDOM.render(<GroceryList />, document.getElementById('app'));
+ReactDOM.render(<GroceryList groceryList={['Nuts', 'Bananas', 'Oil']}/>, document.getElementById('app'));
